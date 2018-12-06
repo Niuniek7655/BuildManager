@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{83E7D4F5-4871-4E8D-BAC2-6E885020BD9F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VP</RootNamespace>
+    <AssemblyName>VP</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.Official.2.9.1\lib\net20\ObjectListView.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="View\ClientWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClientWindow.Designer.cs">
+      <DependentUpon>ClientWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LogInWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LogInWindow.Designer.cs">
+      <DependentUpon>LogInWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainAppWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainAppWindow.Designer.cs">
+      <DependentUpon>MainAppWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OrderWindow.Designer.cs">
+      <DependentUpon>OrderWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\WorkerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\WorkerWindow.Designer.cs">
+      <DependentUpon>WorkerWindow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\ClientWindow.resx">
+      <DependentUpon>ClientWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LogInWindow.resx">
+      <DependentUpon>LogInWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainAppWindow.resx">
+      <DependentUpon>MainAppWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OrderWindow.resx">
+      <DependentUpon>OrderWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\WorkerWindow.resx">
+      <DependentUpon>WorkerWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\add_16px.png" />
+    <Content Include="Resource\minus_16px.png" />
+    <Content Include="Resource\notes_16px.png" />
+    <Content Include="Resource\save_16px.png" />
+    <Content Include="Resource\Tomix.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
