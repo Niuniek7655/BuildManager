@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IView;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using VP.Properties;
 
 namespace VP.View
 {
-    public partial class MainAppWindow : Form
+    public partial class MainAppWindow : Form, IMainAppView
     {
         public MainAppWindow()
         {

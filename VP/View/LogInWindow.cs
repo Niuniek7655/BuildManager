@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Constans;
+using IView;
+using IView.Presenter;
+using IView.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,32 +14,49 @@ using System.Windows.Forms;
 
 namespace VP.View
 {
-    public partial class LogInWindow : Form
+    public partial class LogInWindow : Form, ILogInView
     {
         public LogInWindow()
         {
             InitializeComponent();
         }
 
-        private void LogInToApp_Click(object sender, EventArgs e)
+        private ILogInPresenter _presenter;
+        public void SetPresenter(ILogInPresenter presenter)
         {
-            if(LogInInput.Text != "admin")
+            _presenter = presenter;
+        }
+
+        public event Func<string, string, Task> LogIn;
+        async private void LogInToApp_Click(object sender, EventArgs e)
+        {
+            var logIn = LogInInput.Text;
+            var password = PasswordInput.Text;
+            await LogIn?.Invoke(logIn, password);
+        }
+
+        public void ShowWarning(string message, string title)
+        {
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        public void ShowMainWindow()
+        {
+            if(InvokeRequired)
             {
-                MessageBox.Show("Użytkownik o podanej nazwie nie istniejeje w systemie", "Niepoprawny login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Invoke(new MethodInvoker(() => ActionForShowMainWindow()));
             }
             else
             {
-                if (PasswordInput.Text != "admin")
-                {
-                    MessageBox.Show("Wprowadzone hasło jest niepoprawne", "Niepoprawne hasło", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    var mainWindow = new MainAppWindow();
-                    Visible = false;
-                    mainWindow.Show();
-                }
+                ActionForShowMainWindow();
             }
+        }
+
+        private void ActionForShowMainWindow()
+        {
+            var mainWindow = new MainAppWindow();
+            Visible = false;
+            mainWindow.Show();
         }
 
         private void ShowPassword_MouseDown(object sender, MouseEventArgs e)

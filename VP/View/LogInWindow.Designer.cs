@@ -39,46 +39,41 @@
             // Login
             // 
             this.Login.AutoSize = true;
-            this.Login.Location = new System.Drawing.Point(16, 11);
-            this.Login.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Login.Location = new System.Drawing.Point(12, 9);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(43, 17);
+            this.Login.Size = new System.Drawing.Size(33, 13);
             this.Login.TabIndex = 0;
             this.Login.Text = "Login";
             // 
             // LogInInput
             // 
-            this.LogInInput.Location = new System.Drawing.Point(72, 7);
-            this.LogInInput.Margin = new System.Windows.Forms.Padding(4);
+            this.LogInInput.Location = new System.Drawing.Point(54, 6);
             this.LogInInput.Name = "LogInInput";
-            this.LogInInput.Size = new System.Drawing.Size(232, 22);
+            this.LogInInput.Size = new System.Drawing.Size(175, 20);
             this.LogInInput.TabIndex = 1;
             // 
             // Password
             // 
             this.Password.AutoSize = true;
-            this.Password.Location = new System.Drawing.Point(16, 43);
-            this.Password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Password.Location = new System.Drawing.Point(12, 35);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(44, 17);
+            this.Password.Size = new System.Drawing.Size(36, 13);
             this.Password.TabIndex = 2;
             this.Password.Text = "Hasło";
             // 
             // PasswordInput
             // 
-            this.PasswordInput.Location = new System.Drawing.Point(72, 39);
-            this.PasswordInput.Margin = new System.Windows.Forms.Padding(4);
+            this.PasswordInput.Location = new System.Drawing.Point(54, 32);
             this.PasswordInput.Name = "PasswordInput";
             this.PasswordInput.PasswordChar = '*';
-            this.PasswordInput.Size = new System.Drawing.Size(232, 22);
+            this.PasswordInput.Size = new System.Drawing.Size(175, 20);
             this.PasswordInput.TabIndex = 3;
             // 
             // LogInToApp
             // 
-            this.LogInToApp.Location = new System.Drawing.Point(205, 71);
-            this.LogInToApp.Margin = new System.Windows.Forms.Padding(4);
+            this.LogInToApp.Location = new System.Drawing.Point(154, 58);
             this.LogInToApp.Name = "LogInToApp";
-            this.LogInToApp.Size = new System.Drawing.Size(100, 28);
+            this.LogInToApp.Size = new System.Drawing.Size(75, 23);
             this.LogInToApp.TabIndex = 4;
             this.LogInToApp.Text = "Zaloguj";
             this.LogInToApp.UseVisualStyleBackColor = true;
@@ -86,10 +81,9 @@
             // 
             // ShowPassword
             // 
-            this.ShowPassword.Location = new System.Drawing.Point(72, 70);
-            this.ShowPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.ShowPassword.Location = new System.Drawing.Point(54, 57);
             this.ShowPassword.Name = "ShowPassword";
-            this.ShowPassword.Size = new System.Drawing.Size(100, 28);
+            this.ShowPassword.Size = new System.Drawing.Size(75, 23);
             this.ShowPassword.TabIndex = 5;
             this.ShowPassword.Text = "Pokaz hasło";
             this.ShowPassword.UseVisualStyleBackColor = true;
@@ -98,16 +92,18 @@
             // 
             // LogInWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 113);
+            this.ClientSize = new System.Drawing.Size(251, 92);
             this.Controls.Add(this.ShowPassword);
             this.Controls.Add(this.LogInToApp);
             this.Controls.Add(this.PasswordInput);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.LogInInput);
             this.Controls.Add(this.Login);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LogInWindow";
             this.Text = "Tomix";
             this.ResumeLayout(false);

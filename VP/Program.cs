@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Model.Encryption;
+using Model.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VP.Presenter;
+using static Constans.ConstansValues;
 
 namespace VP.View
 {
@@ -16,7 +20,11 @@ namespace VP.View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogInWindow());
+            var model = new UsersRepositories();
+            var view = new LogInWindow();
+            var presenter = new LogInPresenter(view, model);
+            view.SetPresenter(presenter);
+            Application.Run(view);
         }
     }
 }

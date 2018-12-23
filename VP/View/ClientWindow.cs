@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IView;
+using IView.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +12,7 @@ using System.Windows.Forms;
 
 namespace VP.View
 {
-    public partial class ClientWindow : Form
+    public partial class ClientWindow : Form, IClientView
     {
         public ClientWindow()
         {

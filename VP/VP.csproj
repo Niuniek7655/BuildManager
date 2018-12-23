@@ -8,13 +8,14 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>VP</RootNamespace>
     <AssemblyName>VP</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -49,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presenter\LogInPresenter.cs" />
     <Compile Include="View\ClientWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,5 +130,23 @@
     <Content Include="Resource\Tomix.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Constans\Constans.csproj">
+      <Project>{5EEE40EC-F30B-49F7-88FC-6C5357FA9173}</Project>
+      <Name>Constans</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IModel\IModel.csproj">
+      <Project>{9c1812c2-917d-4f4a-981e-c4b3bcd07eb5}</Project>
+      <Name>IModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IView\IViewIPresenter.csproj">
+      <Project>{c5ead25c-d0a9-4c37-bc51-10285caea079}</Project>
+      <Name>IViewIPresenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{07a085dc-1397-4ded-ba5d-ed8805fdc742}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
